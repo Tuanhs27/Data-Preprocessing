@@ -90,12 +90,13 @@ def yeu_cau_5_xu_ly_text(df):
 
 def main():
     try:
-        df = pd.read_csv('dataset_assignment.csv')
+        df = pd.read_csv('dataset_assignment_cleaned.csv')
         
         df_yc3 = yeu_cau_3_outliers_skew(df)
         df_yc4 = yeu_cau_4_chuan_hoa_ma_hoa(df_yc3)
         df_yc5 = yeu_cau_5_xu_ly_text(df_yc4)
-        df_yc5.to_csv('dataset_assignment.csv', index=False)
+        
+        df_yc5.to_csv('dataset_assignment_phase1_final.csv', index=False)
         print("\nHoan tat Giai doan 1! Da luu file: dataset_assignment_phase1_final.csv")
         
     except FileNotFoundError:
